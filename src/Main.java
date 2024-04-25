@@ -40,14 +40,14 @@ public class Main {
 
             List<Apartment> suitableApartments = new ArrayList<>();
             for (Apartment apartment : apartments){
-                if (apartment.getRooms() == 3 && apartment.getArea() > 100){
+                if (apartment.getRooms() == 3 && apartment.getArea() > 100 && apartment.getCity()!="Пловдив"){
                     suitableApartments.add(apartment);
                 }
             }
             if (suitableApartments.isEmpty()){
                 throw new UnsuitableApartmentsException("There are no suitable apartments.");
             }
-            suitableApartments.sort(Comparator.comparingInt(Apartment::getPrice));
+            Collections.sort(suitableApartments);
 
             Set<String> phoneNumbers = new HashSet<>();
             FileWriter fileWriter = new FileWriter("output.txt");

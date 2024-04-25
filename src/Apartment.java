@@ -1,4 +1,4 @@
-public class Apartment {
+public class Apartment implements Comparable{
     String city;
     int rooms;
     int area;
@@ -54,5 +54,11 @@ public class Apartment {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+    @Override
+    public int compareTo(Object o) {
+        if(price == ((Apartment)o).getPrice())
+            return area - ((Apartment)o).getArea();
+        return price - ((Apartment)o).getPrice();
     }
 }
