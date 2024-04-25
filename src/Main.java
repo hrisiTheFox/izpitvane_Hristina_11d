@@ -40,7 +40,7 @@ public class Main {
 
             List<Apartment> suitableApartments = new ArrayList<>();
             for (Apartment apartment : apartments){
-                if (apartment.getRooms() == 3 && apartment.getArea() > 100 && apartment.getCity()!="Пловдив"){
+                if (apartment.getRooms() == 3 && apartment.getArea() > 100 && !apartment.getCity().equals("Пловдив")){
                     suitableApartments.add(apartment);
                 }
             }
